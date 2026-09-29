@@ -7,8 +7,11 @@
 
 
 fn main() {
-    let cat = ("Furry McFurson", 3.5);
-    let /* your pattern here */(name, age) = cat;
-
-    println!("{} is {} years old.", name, age);
+    let cat = (String::from("Furry McFurson"), 3.5);
+    let temp = get_name_and_age(cat);
+    println!("{} is {} years old.", temp.0, temp.1);
+}
+fn get_name_and_age(cat: (String, f64)) -> (String, f64) {
+    let (name, age) = cat;
+    (name, age)
 }
